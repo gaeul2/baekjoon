@@ -1,16 +1,9 @@
-one, two, three = map(int, input().split())
-
-box = [one, two, three]
-num = len(set(box))
-
-if num == 1:
-    print(10000+(box[0]*1000))
-elif num == 3:
-    print(max(box) * 100) 
+a,b,c=map(int,input().split())
+if a==b==c:
+    print(10000+a*1000)
+elif a==b or b==c:
+    print(1000+b*100)
+elif a==c:
+    print(1000+a*100)
 else:
-    tmp = box[2]
-    box.pop()
-    if tmp in box:
-        print(1000+(tmp * 100))
-    else:
-        print(1000 +(box[1]*100))
+    print(max(a,b,c)*100)
